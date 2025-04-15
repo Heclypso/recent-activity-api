@@ -1,11 +1,15 @@
-// import cors from 'cors'
-// import express from 'express'
-// const app = express()
+import cors from 'cors'
+import express from 'express'
+const app = express()
 // const PORT = 3000;
 
-// app.use(cors())
+app.use(cors())
 
 export default function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', 'https://recent-activity.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');  
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');  
+    
     const informacoesDeAcesso = {
         sistemaOperacional: 'Kali NetHunter',
         local: 'Chengdu, China',
